@@ -21,4 +21,7 @@ mongoose.connect(process.env.MONGO_URI)
       console.log(`Servidor rodando na porta ${process.env.PORT}`);
     });
   })
-  .catch(err => console.error(err));
+  .catch(err => {
+    console.error('Erro MongoDB:', err);
+    process.exit(1);
+  });
